@@ -565,7 +565,15 @@
     skills: () => ['<span class="ok">[installed]</span> python  sql  machine-learning  data-analytics  software-dev  emerging-tech'],
     interests: () => ['machine learning · data analytics · software development · emerging technologies'],
     education: () => ['<span class="hi">IIT Guwahati</span> · Data Science & Artificial Intelligence'],
-    projects: () => { setTimeout(() => scrollToTarget($('#missions')), 500); return ['opening mission files… <span class="ok">ok</span>']; },
+    projects: () => {
+      setTimeout(() => scrollToTarget($('#missions')), 500);
+      return [
+        '<span class="ok">[live]</span> 01  vision-ai-lab   <a class="hi" href="https://ailabs-zeta.vercel.app" target="_blank" rel="noopener">ailabs-zeta.vercel.app</a>',
+        '       8 in-browser vision models · mediapipe · next.js · react',
+        '<span class="or">[wip]</span>  02-04 classified',
+        'opening mission files… <span class="ok">ok</span>',
+      ];
+    },
     contact: () => {
       setTimeout(() => scrollToTarget($('#uplink')), 500);
       return [

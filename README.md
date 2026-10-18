@@ -16,7 +16,7 @@ GSAP + ScrollTrigger and Lenis load from CDNs. If they fail, the page still rend
 
 | What | Where |
 | --- | --- |
-| Projects (title, text, tags, link, screenshot) | `index.html`, the four `PROJECT PLACEHOLDER` blocks in `#missions`. Put a screenshot in `assets/img/` and un-comment the `<img>` line. |
+| Projects (title, text, tags, link, screenshot) | `index.html`, `#missions`. Mission 01 is Vision AI Lab; Missions 02-04 are the `PROJECT PLACEHOLDER` blocks. Put a screenshot in `assets/img/` and un-comment the `<img>` line. The terminal's `projects` command in `js/main.js` lists them too. |
 | Email, GitHub, LinkedIn, résumé | `index.html`, the links in `#uplink` (email is in both `href` and `data-copy`; the résumé is `assets/resume.pdf`). The terminal's `contact`, `resume`, `github` and `linkedin` commands in `js/main.js` use the same links. |
 | Terminal commands | `js/main.js`, the `CMDS` object. |
 | Robot lines | `js/main.js`, the `LINES` array. |

@@ -619,6 +619,9 @@ html.js .identity__text p:not(.is-in) mark { background-size: 0% 34%; }
 }
 .mission__status { color: var(--orange); }
 .mission__status::before { content: ''; display: inline-block; width: 6px; height: 6px; margin-right: 8px; background: var(--orange); animation: pulse 1s steps(1) infinite; vertical-align: 1px; }
+.mission__status--live { color: var(--lime); }
+.mission__status--live::before { background: var(--lime); }
+.mission__media img { object-position: 50% 40%; }
 .mission__media { position: relative; height: clamp(220px, 24vw, 330px); margin: 14px 14px 0; overflow: hidden; background: #05070a; border: 1px solid var(--line); }
 .mission__media::before {
   content: ''; position: absolute; inset: -50%; opacity: .2;
