@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaushik Chakraborty · Data Science &amp; AI</title>
+  <meta name="description" content="Kaushik Chakraborty: Data Science and Artificial Intelligence student at IIT Guwahati, building intelligent solutions to real-world problems.">
+  <meta name="theme-color" content="#07090c">
+  <meta property="og:title" content="Kaushik Chakraborty · Data Science & AI">
+  <meta property="og:description" content="Building intelligent solutions with Python, SQL and data-driven tools.">
+  <meta property="og:image" content="assets/img/portrait.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307090c'/%3E%3Cpath d='M32 6l22 13v26L32 58 10 45V19z' fill='none' stroke='%23ff6a1a' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%233ddcff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js', 'is-booting');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ===================== Boot sequence ===================== -->
+  <div class="boot" aria-hidden="true">
+    <div class="boot__door boot__door--top"><span class="boot__hazard"></span></div>
+    <div class="boot__door boot__door--bottom"><span class="boot__hazard"></span></div>
+    <div class="boot__console">
+      <div class="boot__head"><span class="boot__hex"></span>KC-OS v2.6 <i>// neural core bootloader</i></div>
+      <pre class="boot__log"></pre>
+      <div class="boot__bar"><span class="boot__fill"></span></div>
+      <div class="boot__meta"><span class="boot__pct">000%</span><span>press any key to skip</span></div>
+    </div>
+    <div class="boot__online">SYSTEM ONLINE</div>
+  </div>
+
+  <!-- ===================== Ambient layers ===================== -->
+  <canvas id="neural" aria-hidden="true"></canvas>
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__cross"></span>
+    <span class="cursor__ring"></span>
+    <span class="cursor__coords">000 · 000</span>
+  </div>
+  <div class="lock" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="lock__label">TARGET</span></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ===================== HUD frame ===================== -->
+  <div class="hud" aria-hidden="true">
+    <span class="hud__corner hud__corner--tl"></span><span class="hud__corner hud__corner--tr"></span>
+    <span class="hud__corner hud__corner--bl"></span><span class="hud__corner hud__corner--br"></span>
+    <div class="hud__rail hud__rail--left">
+      <span class="hud__sec">SEC-00</span>
+      <span class="hud__ticks"></span>
+      <span class="hud__secname">BOOT</span>
+    </div>
+    <div class="hud__rail hud__rail--right">
+      <span class="hud__alt-label">ALT</span>
+      <span class="hud__alt"><i></i></span>
+      <span class="hud__alt-num">000</span>
+    </div>
+    <div class="hud__bar">
+      <span>X <b data-hud="x">0000</b> Y <b data-hud="y">0000</b></span>
+      <span>FPS <b data-hud="fps">60</b></span>
+      <span>UPTIME <b data-hud="uptime">00:00:00</b></span>
+      <span class="hud__status"><i></i>ALL SYSTEMS NOMINAL</span>
+    </div>
+  </div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===================== Navigation ===================== -->
+  <header class="nav">
+    <a href="#top" class="nav__logo" data-magnetic aria-label="Kaushik Chakraborty, back to top">
+      <span class="hexmark"><b>KC</b></span>
+      <span class="nav__sys">KAUSHIK<em>.SYS</em></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#identity" data-scramble><i>01</i>Identity</a>
+      <a href="#systems" data-scramble><i>02</i>Systems</a>
+      <a href="#network" data-scramble><i>03</i>Network</a>
+      <a href="#missions" data-scramble><i>04</i>Missions</a>
+      <a href="#uplink" data-scramble><i>05</i>Uplink</a>
+    </nav>
+    <a href="#uplink" class="nav__status" data-magnetic><span class="led"></span>Online · open to opportunities</a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <p class="menu__head">// NAVIGATION OVERRIDE</p>
+    <nav class="menu__links" aria-label="Mobile">
+      <a href="#identity"><i>01</i>Identity</a>
+      <a href="#systems"><i>02</i>Systems</a>
+      <a href="#network"><i>03</i>Network</a>
+      <a href="#missions"><i>04</i>Missions</a>
+      <a href="#terminal"><i>05</i>Terminal</a>
+      <a href="#uplink"><i>06</i>Uplink</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" id="top" data-sec="00" data-secname="UNIT KC">
+      <div class="hero__floor" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="hero__tag" data-hero><span class="led"></span>[ UNIT KC-26 ] <i>//</i> status: online</p>
+          <h1 class="hero__name" aria-label="Kaushik Chakraborty">
+            <span class="glitch" data-text="KAUSHIK" aria-hidden="true"><span class="hero__first" data-decode>KAUSHIK</span></span>
+            <span class="hero__last" aria-hidden="true" data-decode>CHAKRABORTY</span>
+          </h1>
+          <p class="hero__role" data-hero><span class="prompt">&gt;</span> <span class="typer" data-lines='["Data Science & AI @ IIT Guwahati","building intelligent solutions","machine learning · data analytics","turning ideas into practical projects"]'>Data Science &amp; AI @ IIT Guwahati</span><span class="caret" aria-hidden="true"></span></p>
+          <p class="hero__bio" data-hero>Data Science and Artificial Intelligence student at <strong>IIT Guwahati</strong>, passionate about building intelligent solutions and exploring how technology can solve <strong>real-world problems</strong>.</p>
+          <div class="hero__ctas" data-hero>
+            <a href="#missions" class="btn btn--primary" data-magnetic><span class="btn__label">View missions</span><span class="btn__icon" aria-hidden="true">▶</span></a>
+            <a href="#terminal" class="btn btn--ghost" data-magnetic><span class="btn__label">Open terminal</span><span class="btn__icon" aria-hidden="true">_</span></a>
+          </div>
+          <dl class="spec" data-hero>
+            <div><dt>Focus</dt><dd>ML · Data · Software</dd></div>
+            <div><dt>Base</dt><dd>IIT Guwahati</dd></div>
+            <div><dt>Lang</dt><dd>Python · SQL</dd></div>
+            <div><dt>Mode</dt><dd>Always learning</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__visual">
+          <div class="pod" data-mode="optical">
+            <div class="pod__bar"><span class="pod__feed">OPTICAL FEED <i>//</i> CAM-01</span><span class="pod__rec"><i></i>REC <b data-timecode>00:00:00:00</b></span></div>
+            <div class="pod__view" data-lock="Subject">
+              <div class="pod__radar" aria-hidden="true"></div>
+              <div class="pod__grid" aria-hidden="true"></div>
+              <div class="pod__img">
+                <img class="layer layer--optical is-on" src="assets/img/portrait.png" width="725" height="1142" alt="Portrait of Kaushik Chakraborty">
+                <img class="layer layer--thermal" data-src="assets/img/portrait-thermal.png" width="725" height="1142" alt="" aria-hidden="true">
+                <img class="layer layer--night" data-src="assets/img/portrait-night.png" width="725" height="1142" alt="" aria-hidden="true">
+                <img class="layer layer--lidar" data-src="assets/img/portrait-edge.png" width="725" height="1142" alt="" aria-hidden="true">
+                <svg class="facemesh" viewBox="0 0 725 1142" aria-hidden="true"></svg>
+                <span class="pod__scan" aria-hidden="true"></span>
+              </div>
+              <span class="pod__corner pod__corner--tl"></span><span class="pod__corner pod__corner--tr"></span>
+              <span class="pod__corner pod__corner--bl"></span><span class="pod__corner pod__corner--br"></span>
+              <div class="pod__read pod__read--left" aria-hidden="true">
+                <span>NEURAL LOAD <b data-read="load">87%</b></span>
+                <span>CURIOSITY <b>MAX</b></span>
+                <span>SIGNAL <b data-read="sig">-42dB</b></span>
+              </div>
+              <div class="pod__read pod__read--right" aria-hidden="true">
+                <span>MODE <b data-read="mode">OPTICAL</b></span>
+                <span>LAT <b>26.19°N</b></span>
+                <span>LON <b>91.69°E</b></span>
+              </div>
+            </div>
+            <div class="pod__modes" role="group" aria-label="Vision mode">
+              <button type="button" class="is-active" data-mode="optical" aria-pressed="true">Optical</button>
+              <button type="button" data-mode="thermal" aria-pressed="false">Thermal</button>
+              <button type="button" data-mode="night" aria-pressed="false">Night</button>
+              <button type="button" data-mode="lidar" aria-pressed="false">Lidar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__foot" data-hero>
+        <a href="#identity" class="scroll-cue"><span class="scroll-cue__bar"><i></i></span>Scroll to initialize</a>
+        <span class="hero__coords">26.19°N 91.69°E <i>//</i> Guwahati, India</span>
+      </div>
+    </section>
+
+    <!-- ===================== Hazard tapes ===================== -->
+    <div class="tapes" aria-hidden="true">
+      <div class="tape tape--orange" data-dir="1"><div class="tape__track"><span>Machine learning</span><b>⬢</b><span>Data analytics</span><b>⬢</b><span>Python</span><b>⬢</b><span>SQL</span><b>⬢</b><span>Software development</span><b>⬢</b><span>Emerging tech</span><b>⬢</b></div></div>
+      <div class="tape tape--cyan" data-dir="-1"><div class="tape__track"><span>Curiosity</span><b>//</b><span>Creativity</span><b>//</b><span>Meaningful technology</span><b>//</b><span>Hands-on learning</span><b>//</b><span>Real-world impact</span><b>//</b></div></div>
+    </div>
+
+    <!-- ===================== 01 Identity ===================== -->
+    <section class="section identity" id="identity" data-sec="01" data-secname="IDENTITY">
+      <div class="shead" data-reveal><span class="shead__idx">[01]</span><span class="shead__lbl">Identity</span><span class="shead__rule"></span><span class="shead__code">// FILE KC-26.ID</span></div>
+      <p class="statement" data-words>I'm driven by <em>curiosity</em>, <em>creativity</em>, and a desire to build <em>meaningful technology</em>.</p>
+
+      <div class="identity__grid">
+        <div class="idcard frame" data-reveal>
+          <div class="idcard__head"><span>Identity file</span><span class="idcard__ok">● Verified</span></div>
+          <dl class="idcard__rows">
+            <div><dt>Name</dt><dd data-type>Kaushik Chakraborty</dd></div>
+            <div><dt>Class</dt><dd data-type>Student · Data Science &amp; AI</dd></div>
+            <div><dt>Base</dt><dd data-type>IIT Guwahati</dd></div>
+            <div><dt>Languages</dt><dd data-type>Python, SQL</dd></div>
+            <div><dt>Interests</dt><dd data-type>Machine learning, data analytics, software development, emerging tech</dd></div>
+            <div><dt>Objective</dt><dd data-type>Build impactful solutions; grow as a developer &amp; AI professional</dd></div>
+          </dl>
+          <div class="idcard__barcode" aria-hidden="true"></div>
+        </div>
+
+        <div class="identity__text">
+          <p data-reveal>Hi, I'm <strong>Kaushik Chakraborty</strong>. I'm a Data Science and Artificial Intelligence student at <mark>IIT Guwahati</mark>, passionate about building intelligent solutions and exploring how technology can solve real-world problems.</p>
+          <p data-reveal>My interests span <mark>machine learning</mark>, <mark>data analytics</mark>, software development, and emerging technologies. I enjoy working with Python, SQL, and data-driven tools to turn ideas into practical projects. I'm constantly learning, experimenting, and refining my skills through hands-on work.</p>
+          <p data-reveal>My goal is to create <mark>impactful solutions</mark> while growing as a developer and AI professional.</p>
+          <div class="gauges">
+            <div class="gauge" data-reveal data-gauge="1"><svg viewBox="0 0 120 120"><circle class="gauge__track" cx="60" cy="60" r="50"/><circle class="gauge__val" cx="60" cy="60" r="50"/></svg><b>∞</b><span>Curiosity</span></div>
+            <div class="gauge" data-reveal data-gauge=".8"><svg viewBox="0 0 120 120"><circle class="gauge__track" cx="60" cy="60" r="50"/><circle class="gauge__val" cx="60" cy="60" r="50"/></svg><b data-count="4">4</b><span>Interest domains</span></div>
+            <div class="gauge" data-reveal data-gauge=".6"><svg viewBox="0 0 120 120"><circle class="gauge__track" cx="60" cy="60" r="50"/><circle class="gauge__val" cx="60" cy="60" r="50"/></svg><b data-count="2">2</b><span>Core languages</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Directives (stacking cards) ===================== -->
+    <section class="section directives" id="directives" data-sec="02" data-secname="DIRECTIVES">
+      <div class="shead" data-reveal><span class="shead__idx">[02]</span><span class="shead__lbl">Prime directives</span><span class="shead__rule"></span><span class="shead__code">// HARD-CODED</span></div>
+      <h2 class="h2" data-decode>Three rules I <em>run on</em></h2>
+      <div class="stack">
+        <article class="directive" style="--i:0">
+          <div class="directive__num">01</div>
+          <div class="directive__body">
+            <p class="directive__code">DIRECTIVE_01.exe</p>
+            <h3>Build intelligent solutions</h3>
+            <p>Turn ideas into practical projects with Python, SQL, and data-driven tools.</p>
+            <div class="directive__exec"><span>Executing</span><i></i></div>
+          </div>
+          <svg class="directive__art art-gear" viewBox="0 0 200 200" aria-hidden="true">
+            <g class="g1"><path d="M100 30l10 2 4 16 12 5 14-9 14 14-9 14 5 12 16 4v20l-16 4-5 12 9 14-14 14-14-9-12 5-4 16h-20l-4-16-12-5-14 9-14-14 9-14-5-12-16-4V90l16-4 5-12-9-14 14-14 14 9 12-5 4-16z"/><circle cx="100" cy="100" r="22"/></g>
+            <g class="g2"><circle cx="160" cy="160" r="18"/><circle cx="160" cy="160" r="6"/></g>
+          </svg>
+        </article>
+        <article class="directive" style="--i:1">
+          <div class="directive__num">02</div>
+          <div class="directive__body">
+            <p class="directive__code">DIRECTIVE_02.exe</p>
+            <h3>Solve real-world problems</h3>
+            <p>Explore how technology can make a real difference, beyond the notebook.</p>
+            <div class="directive__exec"><span>Executing</span><i></i></div>
+          </div>
+          <svg class="directive__art art-globe" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="70"/>
+            <ellipse class="spin" cx="100" cy="100" rx="30" ry="70"/>
+            <ellipse class="spin s2" cx="100" cy="100" rx="58" ry="70"/>
+            <path d="M30 100h140M42 62h116M42 138h116"/>
+            <circle class="ping" cx="128" cy="78" r="5"/>
+          </svg>
+        </article>
+        <article class="directive" style="--i:2">
+          <div class="directive__num">03</div>
+          <div class="directive__body">
+            <p class="directive__code">DIRECTIVE_03.exe</p>
+            <h3>Never stop learning</h3>
+            <p>Constantly learning, experimenting, and refining skills through hands-on work.</p>
+            <div class="directive__exec"><span>Executing</span><i></i></div>
+          </div>
+          <svg class="directive__art art-loop" viewBox="0 0 200 200" aria-hidden="true">
+            <path class="track" d="M100 100c-20-30-60-30-60 0s40 30 60 0 60-30 60 0-40 30-60 0z"/>
+            <path class="runner" d="M100 100c-20-30-60-30-60 0s40 30 60 0 60-30 60 0-40 30-60 0z"/>
+          </svg>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== 02 Systems ===================== -->
+    <section class="section systems" id="systems" data-sec="03" data-secname="SYSTEMS">
+      <div class="shead" data-reveal><span class="shead__idx">[03]</span><span class="shead__lbl">Systems</span><span class="shead__rule"></span><span class="shead__code">// INSTALLED MODULES</span></div>
+      <div class="systems__head">
+        <h2 class="h2" data-decode>Installed <em>modules</em></h2>
+        <div class="radar" aria-hidden="true">
+          <span class="radar__sweep"></span>
+          <span class="radar__ring"></span><span class="radar__ring"></span><span class="radar__ring"></span>
+          <span class="radar__blip" style="--x:30%;--y:28%" data-label="PY"></span>
+          <span class="radar__blip" style="--x:70%;--y:34%" data-label="SQL"></span>
+          <span class="radar__blip" style="--x:62%;--y:70%" data-label="ML"></span>
+          <span class="radar__blip" style="--x:24%;--y:64%" data-label="DATA"></span>
+          <span class="radar__blip" style="--x:48%;--y:16%" data-label="DEV"></span>
+          <span class="radar__blip" style="--x:84%;--y:56%" data-label="AI"></span>
+        </div>
+      </div>
+
+      <div class="modules">
+        <article class="module" data-lock="Python">
+          <header><span class="module__id">MOD-PY-01</span><span class="module__ok">Installed</span></header>
+          <div class="module__art art-wave" aria-hidden="true"><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 30 Q25 0 50 30 T100 30 T150 30 T200 30"/><path class="w2" d="M0 30 Q25 60 50 30 T100 30 T150 30 T200 30"/></svg></div>
+          <h3>Python</h3>
+          <p>The main language for experiments, analysis and models.</p>
+          <div class="module__bar"><i></i></div>
+        </article>
+        <article class="module" data-lock="SQL">
+          <header><span class="module__id">MOD-SQL-02</span><span class="module__ok">Installed</span></header>
+          <div class="module__art art-table" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <h3>SQL</h3>
+          <p>Querying, joining and shaping data at the source.</p>
+          <div class="module__bar"><i></i></div>
+        </article>
+        <article class="module" data-lock="Machine learning">
+          <header><span class="module__id">MOD-ML-03</span><span class="module__ok">Installed</span></header>
+          <div class="module__art art-net" aria-hidden="true"><svg viewBox="0 0 200 70"><g class="edges"><path d="M30 15L100 35M30 35L100 35M30 55L100 35M30 15L100 15M30 55L100 55M100 15L170 35M100 35L170 35M100 55L170 35"/></g><g class="nodes"><circle cx="30" cy="15" r="5"/><circle cx="30" cy="35" r="5"/><circle cx="30" cy="55" r="5"/><circle cx="100" cy="15" r="5"/><circle cx="100" cy="35" r="5"/><circle cx="100" cy="55" r="5"/><circle cx="170" cy="35" r="6"/></g></svg></div>
+          <h3>Machine learning</h3>
+          <p>Teaching models to find patterns and make predictions.</p>
+          <div class="module__bar"><i></i></div>
+        </article>
+        <article class="module" data-lock="Data analytics">
+          <header><span class="module__id">MOD-DA-04</span><span class="module__ok">Installed</span></header>
+          <div class="module__art art-bars" aria-hidden="true"><i style="--h:.4"></i><i style="--h:.7"></i><i style="--h:.5"></i><i style="--h:.9"></i><i style="--h:.6"></i><i style="--h:.8"></i><i style="--h:.45"></i><i style="--h:.75"></i></div>
+          <h3>Data analytics</h3>
+          <p>Turning raw data into insights people can act on.</p>
+          <div class="module__bar"><i></i></div>
+        </article>
+        <article class="module" data-lock="Software dev">
+          <header><span class="module__id">MOD-SW-05</span><span class="module__ok">Installed</span></header>
+          <div class="module__art art-code" aria-hidden="true"><code><i class="k">def</i> <i class="f">build</i>(idea):</code><code>&nbsp;&nbsp;<i class="k">return</i> <i class="f">ship</i>(idea)</code></div>
+          <h3>Software development</h3>
+          <p>Shipping working tools, not just notebooks.</p>
+          <div class="module__bar"><i></i></div>
+        </article>
+        <article class="module" data-lock="Emerging tech">
+          <header><span class="module__id">MOD-EX-06</span><span class="module__ok">Installed</span></header>
+          <div class="module__art art-atom" aria-hidden="true"><span></span><span></span><span></span><b></b></div>
+          <h3>Emerging tech</h3>
+          <p>Always tinkering with whatever comes next.</p>
+          <div class="module__bar"><i></i></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== 03 Neural network ===================== -->
+    <section class="section network" id="network" data-sec="04" data-secname="NETWORK">
+      <div class="shead" data-reveal><span class="shead__idx">[04]</span><span class="shead__lbl">Neural network</span><span class="shead__rule"></span><span class="shead__code">// FORWARD PASS</span></div>
+      <div class="network__head">
+        <h2 class="h2" data-decode>How my <em>mind</em> is wired</h2>
+        <button class="btn btn--ghost btn--sm network__run" type="button" data-magnetic><span class="btn__label">Run forward pass</span><span class="btn__icon" aria-hidden="true">▶</span></button>
+      </div>
+      <div class="nn frame">
+        <svg class="nn__svg" viewBox="0 0 1000 520" role="group" aria-label="A neural network: inputs curiosity, creativity and data feed hidden nodes Python, SQL, machine learning and analytics, which output meaningful technology"></svg>
+        <div class="nn__layers" aria-hidden="true"><span>Input layer</span><span>Hidden layer</span><span>Output</span></div>
+        <aside class="nn__info" aria-live="polite"><span class="nn__k">Node</span><b class="nn__t">Curiosity</b><p class="nn__d">Hover a neuron to inspect it.</p></aside>
+      </div>
+    </section>
+
+    <!-- ===================== 04 Missions (placeholders) ===================== -->
+    <section class="section missions" id="missions" data-sec="05" data-secname="MISSIONS">
+      <div class="shead" data-reveal><span class="shead__idx">[05]</span><span class="shead__lbl">Mission log</span><span class="shead__rule"></span><span class="shead__code">// PROJECTS</span></div>
+      <div class="missions__head">
+        <h2 class="h2" data-decode>Mission <em>files</em></h2>
+        <p class="lede" data-reveal>Project dossiers are being declassified. Each file below is a placeholder, ready for a project.</p>
+      </div>
+
+      <div class="missions__grid">
+        <!-- PROJECT PLACEHOLDER 01: replace the title, description, tags, link and screenshot -->
+        <article class="mission mission--wide" data-reveal>
+          <a class="mission__link" href="#" data-lock="Open file">
+            <div class="mission__top"><span>MISSION 01</span><span class="mission__status">Awaiting deployment</span></div>
+            <div class="mission__media">
+              <!-- <img src="assets/img/project-1.jpg" alt="Screenshot of Project One"> -->
+              <span class="mission__nosignal"><b>Feed offline</b><small>Add screenshot · 1600 × 1000</small></span>
+            </div>
+            <div class="mission__body">
+              <h3 class="mission__title" data-cipher>Project Title</h3>
+              <p class="mission__desc">One line on the problem, your approach and the result.</p>
+              <ul class="mission__tags"><li>Python</li><li>Machine learning</li><li>Tag</li></ul>
+            </div>
+            <span class="mission__arrow" aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- PROJECT PLACEHOLDER 02 -->
+        <article class="mission" data-reveal>
+          <a class="mission__link" href="#" data-lock="Open file">
+            <div class="mission__top"><span>MISSION 02</span><span class="mission__status">Awaiting deployment</span></div>
+            <div class="mission__media">
+              <span class="mission__nosignal"><b>Feed offline</b><small>Add screenshot · 1200 × 1000</small></span>
+            </div>
+            <div class="mission__body">
+              <h3 class="mission__title" data-cipher>Project Title</h3>
+              <p class="mission__desc">A short summary of the idea and what it does.</p>
+              <ul class="mission__tags"><li>SQL</li><li>Data analytics</li></ul>
+            </div>
+            <span class="mission__arrow" aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- PROJECT PLACEHOLDER 03 -->
+        <article class="mission" data-reveal>
+          <a class="mission__link" href="#" data-lock="Open file">
+            <div class="mission__top"><span>MISSION 03</span><span class="mission__status">Awaiting deployment</span></div>
+            <div class="mission__media">
+              <span class="mission__nosignal"><b>Feed offline</b><small>Add screenshot · 1200 × 1000</small></span>
+            </div>
+            <div class="mission__body">
+              <h3 class="mission__title" data-cipher>Project Title</h3>
+              <p class="mission__desc">A short summary of the idea and what it does.</p>
+              <ul class="mission__tags"><li>Python</li><li>Tag</li></ul>
+            </div>
+            <span class="mission__arrow" aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- PROJECT PLACEHOLDER 04 -->
+        <article class="mission mission--wide" data-reveal>
+          <a class="mission__link" href="#" data-lock="Open file">
+            <div class="mission__top"><span>MISSION 04</span><span class="mission__status">Awaiting deployment</span></div>
+            <div class="mission__media">
+              <span class="mission__nosignal"><b>Feed offline</b><small>Add screenshot · 1600 × 1000</small></span>
+            </div>
+            <div class="mission__body">
+              <h3 class="mission__title" data-cipher>Project Title</h3>
+              <p class="mission__desc">One line on the problem, your approach and the result.</p>
+              <ul class="mission__tags"><li>AI</li><li>Software</li><li>Tag</li></ul>
+            </div>
+            <span class="mission__arrow" aria-hidden="true">↗</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== 05 Terminal ===================== -->
+    <section class="section terminal-sec" id="terminal" data-sec="06" data-secname="TERMINAL">
+      <div class="shead" data-reveal><span class="shead__idx">[06]</span><span class="shead__lbl">Terminal</span><span class="shead__rule"></span><span class="shead__code">// TYPE 'help'</span></div>
+      <div class="term frame" data-reveal>
+        <div class="term__bar"><i></i><i></i><i></i><span>kaushik@kc-os: ~</span></div>
+        <div class="term__out" aria-live="polite"></div>
+        <form class="term__form" autocomplete="off">
+          <label class="term__prompt" for="term-input">kaushik@kc-os:~$</label>
+          <input id="term-input" class="term__input" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command">
+        </form>
+        <div class="term__chips" aria-label="Quick commands">
+          <button type="button" data-cmd="help">help</button>
+          <button type="button" data-cmd="whoami">whoami</button>
+          <button type="button" data-cmd="neofetch">neofetch</button>
+          <button type="button" data-cmd="skills">skills</button>
+          <button type="button" data-cmd="sudo hire-kaushik">sudo hire-kaushik</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 06 Uplink ===================== -->
+    <section class="section uplink" id="uplink" data-sec="07" data-secname="UPLINK">
+      <div class="shead" data-reveal><span class="shead__idx">[07]</span><span class="shead__lbl">Uplink</span><span class="shead__rule"></span><span class="shead__code">// CHANNEL OPEN</span></div>
+      <div class="uplink__grid">
+        <div class="uplink__copy">
+          <h2 class="uplink__title" data-decode>Let's build <em>intelligent</em> things.</h2>
+          <p class="lede" data-reveal>Open to projects, internships, and collaborations in machine learning, data, and software. Signal strength is good.</p>
+
+          <a class="uplink__email" href="mailto:koushik.vns@gmail.com" data-copy="koushik.vns@gmail.com" data-magnetic data-lock="Copy email">
+            <span class="uplink__sig" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="uplink__addr">koushik.vns@gmail.com</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <ul class="uplink__socials">
+            <li><a href="https://github.com/KoushikVNS" target="_blank" rel="noopener" data-scramble data-magnetic>GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/kaushik-chakraborty-vns" target="_blank" rel="noopener" data-scramble data-magnetic>LinkedIn</a></li>
+            <li><a href="assets/resume.pdf" target="_blank" rel="noopener" data-scramble data-magnetic data-lock="Open résumé">Résumé</a></li>
+          </ul>
+        </div>
+
+        <div class="bot" data-lock="Say hi">
+          <div class="bot__bubble" aria-live="polite">Beep. Uplink ready.</div>
+          <svg class="bot__svg" viewBox="0 0 240 260" role="img" aria-label="A small robot mascot whose eyes follow your cursor">
+            <defs>
+              <linearGradient id="botSteel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4552"/><stop offset="1" stop-color="#151b22"/></linearGradient>
+              <linearGradient id="botVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1016"/><stop offset="1" stop-color="#02050a"/></linearGradient>
+            </defs>
+            <line x1="120" y1="38" x2="120" y2="12" stroke="#5d6b78" stroke-width="4"/>
+            <circle class="bot__antenna" cx="120" cy="10" r="7"/>
+            <rect x="30" y="38" width="180" height="150" rx="34" fill="url(#botSteel)" stroke="#5d6b78" stroke-width="2"/>
+            <rect x="14" y="88" width="18" height="46" rx="6" fill="#222a33" stroke="#5d6b78"/>
+            <rect x="208" y="88" width="18" height="46" rx="6" fill="#222a33" stroke="#5d6b78"/>
+            <rect x="48" y="62" width="144" height="80" rx="22" fill="url(#botVisor)" stroke="#2a3540"/>
+            <g class="bot__eyes">
+              <g class="bot__eye" data-cx="92" data-cy="102"><circle cx="92" cy="102" r="18" class="bot__eyeball"/><circle cx="92" cy="102" r="8" class="bot__pupil"/></g>
+              <g class="bot__eye" data-cx="148" data-cy="102"><circle cx="148" cy="102" r="18" class="bot__eyeball"/><circle cx="148" cy="102" r="8" class="bot__pupil"/></g>
+            </g>
+            <g class="bot__mouth"><rect x="88" y="156" width="8" height="14" rx="2"/><rect x="100" y="156" width="8" height="14" rx="2"/><rect x="112" y="156" width="8" height="14" rx="2"/><rect x="124" y="156" width="8" height="14" rx="2"/><rect x="136" y="156" width="8" height="14" rx="2"/><rect x="148" y="156" width="8" height="14" rx="2"/></g>
+            <rect x="96" y="188" width="48" height="16" fill="#222a33"/>
+            <path d="M40 260c0-34 30-56 80-56s80 22 80 56z" fill="url(#botSteel)" stroke="#5d6b78" stroke-width="2"/>
+            <circle cx="120" cy="236" r="9" class="bot__core"/>
+          </svg>
+          <p class="bot__hint">tap the robot</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span data-year>2026</span> Kaushik Chakraborty</p>
+    <p class="footer__mid">Built on Python-powered curiosity <i>//</i> try the Konami code</p>
+    <button type="button" class="footer__top" data-magnetic>▲ Return to base</button>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/face-data.js"></script>
+  <script src="js/neural.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
